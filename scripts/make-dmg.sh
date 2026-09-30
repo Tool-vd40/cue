@@ -8,6 +8,8 @@ cd "$(dirname "$0")/.."
 STAGE="$(mktemp -d)"
 cp -R "dist/Cue.app" "${STAGE}/"
 ln -s /Applications "${STAGE}/Applications"
+# BOM so TextEdit reads the Cyrillic as UTF-8, not Mac Roman.
+{ printf '\xEF\xBB\xBF'; cat scripts/how-to-open.txt; } > "${STAGE}/Как открыть Cue — How to open.txt"
 hdiutil create -volname "Cue" -srcfolder "${STAGE}" -ov -format UDZO "dist/Cue.dmg" >/dev/null
 rm -rf "${STAGE}"
 

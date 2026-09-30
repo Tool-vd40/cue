@@ -1,0 +1,73 @@
+КАК УСТАНОВИТЬ И ОТКРЫТЬ CUE
+============================
+
+1. Перетащи значок Cue на папку «Программы» (Applications) в этом окне.
+2. Открой «Программы» в Finder и запусти Cue.
+
+Cue живёт в строке меню вверху экрана (значок в виде строк текста).
+Значка в Dock нет — так и задумано.
+
+
+Если macOS пишет «Apple не удалось подтвердить, что Cue не содержит
+вредоносного ПО…» — это нормально. Cue не проходил платную проверку
+Apple (нотаризацию), macOS так пишет про любое такое приложение из
+интернета. Разрешить нужно один раз:
+
+macOS 15 и новее
+  1. В предупреждении нажми «Готово» (НЕ «Переместить в Корзину»).
+  2. Открой  → Системные настройки → Конфиденциальность и безопасность.
+  3. Прокрути вниз до «Программа Cue заблокирована…».
+  4. Нажми «Всё равно открыть», подтверди паролем или Touch ID
+     и ещё раз нажми «Всё равно открыть».
+
+macOS 13–14
+  1. В Finder открой «Программы».
+  2. Правой кнопкой (или с Control) по Cue → «Открыть».
+  3. В окне нажми «Открыть».
+
+Любая версия — через Терминал
+  Открой Терминал (⌘Пробел → «Терминал»), вставь и нажми Enter:
+
+      xattr -dr com.apple.quarantine /Applications/Cue.app
+
+Дальше Cue открывается как обычно.
+
+Хоткеи: ⌃⌥P — показать/скрыть, ⌃⌥V — вставить тезисы из буфера.
+Подробнее: https://github.com/Tool-vd40/cue
+
+
+HOW TO INSTALL AND OPEN CUE
+===========================
+
+1. Drag the Cue icon onto the Applications folder in this window.
+2. Open Applications in Finder and launch Cue.
+
+Cue lives in the menu bar at the top of the screen (a lines-of-text
+icon). There's no Dock icon, by design.
+
+
+If macOS says "Apple could not verify Cue is free of malware…" — that's
+expected. Cue isn't notarized by Apple (a paid check), and macOS says this
+about every such app from the internet. Allow it once:
+
+macOS 15 and later
+  1. In the warning, click "Done" (NOT "Move to Trash").
+  2. Open  → System Settings → Privacy & Security.
+  3. Scroll down to "Cue was blocked to protect your Mac".
+  4. Click "Open Anyway", confirm with password or Touch ID,
+     then click "Open Anyway" again.
+
+macOS 13–14
+  1. In Finder, open Applications.
+  2. Right-click (or Control-click) Cue → Open.
+  3. Click Open in the dialog.
+
+Any version — via Terminal
+  Open Terminal (⌘Space → "Terminal"), paste and press Enter:
+
+      xattr -dr com.apple.quarantine /Applications/Cue.app
+
+After that Cue opens normally.
+
+Hotkeys: ⌃⌥P — show/hide, ⌃⌥V — paste notes from the clipboard.
+More: https://github.com/Tool-vd40/cue
