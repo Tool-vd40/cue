@@ -1,0 +1,28 @@
+/* Menu bar */
+"Show / Hide" = "Показать / скрыть";
+"Paste Notes from Clipboard" = "Вставить тезисы из буфера";
+"Open Files…" = "Загрузить файлы…";
+"Close Current File" = "Закрыть текущий файл";
+"Edit Text…" = "Править текст…";
+"Auto-Scroll" = "Автопрокрутка";
+"Voice-Paced Scrolling" = "Прокрутка под голос";
+"Scroll" = "Листать";
+"Switch File" = "Переключить файл";
+"Check for Updates…" = "Проверить обновления…";
+"Quit" = "Выйти";
+"Taken by another app: %@" = "Занято другим приложением: %@";
+"Notes" = "Тезисы";
+
+/* Panel */
+"Open a file, or copy your notes and press ⌃⌥V" = "Загрузи файл или скопируй тезисы и нажми ⌃⌥V";
+"Files with your notes: .txt, .md — any text" = "Файлы с тезисами: .txt, .md — любой текст";
+"Clipboard" = "Буфер";
+
+/* Updates */
+"Couldn't check for updates." = "Не удалось проверить обновления.";
+"You're up to date." = "Установлена последняя версия.";
+"Cue %@ is available" = "Доступна версия Cue %@";
+"You have %@. Install and relaunch?" = "Сейчас стоит %@. Установить и перезапустить?";
+"Install" = "Установить";
+"Later" = "Позже";
+"Update failed." = "Не удалось обновиться.";
