@@ -31,6 +31,7 @@ final class AppState: NSObject, NSApplicationDelegate {
         menu.addItem(item(String(localized: "Switch File"), "⌃⌥1 … ⌃⌥9", nil))
         menu.addItem(.separator())
         menu.addItem(item(String(localized: "Check for Updates…"), "", #selector(updateMenu)))
+        menu.addItem(item("Cue \(Updater.currentVersion)", "", nil))
         menu.addItem(item(String(localized: "Quit"), "", #selector(quit)))
         statusItem.menu = menu
 
