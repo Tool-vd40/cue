@@ -55,6 +55,39 @@ final class PrompterPanel: NSPanel {
         if let saved { setFrame(NSRectFromString(saved), display: false) } else { placeUnderCamera() }
 
         catchScrollWheel()
+        catchDrag()
+    }
+
+    /// Drag the panel from anywhere but its edges (the edges resize).
+    ///
+    /// `isMovableByWindowBackground` alone doesn't work here: `NSHostingView`
+    /// claims every mouse-down, so AppKit never sees "background".
+    private var dragMonitor: Any?
+    /// Where the drag started: cursor and panel origin, in screen coordinates.
+    private var dragStart: (mouse: NSPoint, origin: NSPoint)?
+
+    private func catchDrag() {
+        dragMonitor = NSEvent.addLocalMonitorForEvents(
+            matching: [.leftMouseDown, .leftMouseDragged, .leftMouseUp]
+        ) { [weak self] event in
+            guard let self, event.window === self else { return event }
+            switch event.type {
+            case .leftMouseDown:
+                let inside = contentView!.bounds.insetBy(dx: 8, dy: 8).contains(event.locationInWindow)
+                dragStart = inside ? (NSEvent.mouseLocation, frame.origin) : nil
+            case .leftMouseDragged:
+                guard let start = dragStart else { break }
+                let now = NSEvent.mouseLocation
+                setFrameOrigin(NSPoint(x: start.origin.x + now.x - start.mouse.x,
+                                       y: start.origin.y + now.y - start.mouse.y))
+                return nil
+            case .leftMouseUp:
+                if dragStart != nil { saveFrame() }
+                dragStart = nil
+            default: break
+            }
+            return event
+        }
     }
 
     /// Mouse wheel and trackpad scroll the text.

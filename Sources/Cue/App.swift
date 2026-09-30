@@ -59,6 +59,11 @@ final class AppState: NSObject, NSApplicationDelegate {
         Updater.check(interactive: false)
     }
 
+    func showUpdateAvailable(_ tag: String) {
+        guard let menu = statusItem.menu else { return }
+        menu.insertItem(item("⬆ " + String(localized: "Update to Cue \(tag)…"), "", #selector(updateMenu)), at: 0)
+    }
+
     private func item(_ title: String, _ hint: String, _ sel: Selector?) -> NSMenuItem {
         let i = NSMenuItem(title: hint.isEmpty ? title : "\(title)   \(hint)",
                            action: sel, keyEquivalent: "")

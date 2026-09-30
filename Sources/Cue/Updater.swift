@@ -15,8 +15,8 @@ enum Updater {
         return t.compare(version, options: .numeric) == .orderedDescending
     }
 
-    /// `interactive: false` is the silent launch check: speaks up only when
-    /// there's something to install.
+    /// `interactive: false` is the silent launch check: never pops a modal
+    /// (it would block the panel, maybe mid-call), just adds a menu item.
     static func check(interactive: Bool) {
         let url = URL(string: "https://api.github.com/repos/\(repo)/releases/latest")!
         URLSession.shared.dataTask(with: url) { data, _, error in
@@ -31,7 +31,11 @@ enum Updater {
                     if interactive { alert(String(localized: "You're up to date."), "Cue \(currentVersion)") }
                     return
                 }
-                offer(release.tag_name, zip.browser_download_url)
+                if interactive {
+                    offer(release.tag_name, zip.browser_download_url)
+                } else {
+                    AppState.shared.showUpdateAvailable(release.tag_name)
+                }
             }
         }.resume()
     }

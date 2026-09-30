@@ -23,6 +23,7 @@
 "You're up to date." = "Установлена последняя версия.";
 "Cue %@ is available" = "Доступна версия Cue %@";
 "You have %@. Install and relaunch?" = "Сейчас стоит %@. Установить и перезапустить?";
+"Update to Cue %@…" = "Обновить до Cue %@…";
 "Install" = "Установить";
 "Later" = "Позже";
 "Update failed." = "Не удалось обновиться.";
