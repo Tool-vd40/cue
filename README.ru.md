@@ -3,7 +3,7 @@
 Суфлёр для созвонов: тезисы поверх всех окон. Тебе видно, тем, кому
 показываешь экран, — нет.
 
-[English](README.md)
+**[⬇ Скачать Cue для macOS](https://github.com/Tool-vd40/cue/releases/latest/download/Cue.dmg)** · macOS 13+ · [все версии](../../releases) · [English](README.md)
 
 Панель помечена `NSWindow.sharingType = .none`: macOS вырезает такие окна из
 захвата экрана. Zoom, Meet, Teams, запись QuickTime и системный снимок идут
@@ -11,7 +11,7 @@
 
 ## Установка
 
-Скачай `Cue.dmg` со страницы [Releases](../../releases/latest) и перетащи Cue в «Программы».
+[Скачай установщик Cue.dmg](https://github.com/Tool-vd40/cue/releases/latest/download/Cue.dmg), открой его и перетащи Cue в «Программы».
 
 Приложение подписано своей подписью, без нотаризации Apple, поэтому первый
 запуск macOS блокирует. На macOS 15 и новее: открой Cue один раз, затем
@@ -60,3 +60,9 @@
     ./scripts/make-dmg.sh             # dist/Cue.app, Cue.dmg, Cue.zip
     .build/release/Cue --selftest     # проверка логики
     git tag v1.1.0 && git push origin v1.1.0   # CI соберёт и выложит релиз
+
+---
+
+Ключевые слова: суфлёр для Mac, телесуфлёр, скрытые подсказки для Zoom,
+Google Meet и Teams, шпаргалка на собеседование, заметки докладчика,
+невидимые при демонстрации экрана, teleprompter for macOS.

@@ -3,7 +3,7 @@
 A teleprompter for video calls: your talking points float above every window,
 and nobody you share your screen with can see them.
 
-[Русская версия](README.ru.md)
+**[⬇ Download Cue for macOS](https://github.com/Tool-vd40/cue/releases/latest/download/Cue.dmg)** · macOS 13+ · [all releases](../../releases) · [Русская версия](README.ru.md)
 
 The panel sets `NSWindow.sharingType = .none`, so macOS cuts it out of screen
 capture. Zoom, Meet, Teams, QuickTime recording and system screenshots all go
@@ -11,7 +11,7 @@ through that capture, so the panel doesn't show up in them.
 
 ## Install
 
-Download `Cue.dmg` from [Releases](../../releases/latest) and drag Cue to Applications.
+[Download Cue.dmg](https://github.com/Tool-vd40/cue/releases/latest/download/Cue.dmg), open it and drag Cue to Applications.
 
 Cue is ad-hoc signed, not notarized, so macOS blocks the first launch.
 On macOS 15 and later: open Cue once, then System Settings → Privacy & Security →
@@ -74,3 +74,9 @@ CI builds and runs the self-test on macOS 14, 15 and 26 for every push.
 
 CI builds `Cue.zip` and `Cue.dmg` and publishes the release; installed copies
 pick it up on the next launch.
+
+---
+
+Keywords: teleprompter for Mac, hidden teleprompter for Zoom, Google Meet and
+Microsoft Teams, speaker notes invisible to screen sharing, interview cheat
+sheet, presentation prompter, macOS menu bar app, суфлёр для Mac.
