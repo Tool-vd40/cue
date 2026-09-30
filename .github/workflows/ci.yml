@@ -28,6 +28,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: VERSION="${GITHUB_REF_NAME#v}" ./scripts/make-dmg.sh
-      - run: gh release create "$GITHUB_REF_NAME" dist/Cue.zip dist/Cue.dmg --generate-notes
+      - run: |
+          gh release create "$GITHUB_REF_NAME" dist/Cue.zip dist/Cue.dmg --generate-notes \
+            --notes "Download **Cue.dmg** below. macOS warns on first launch that it can't verify the app: [how to open it](https://github.com/Tool-vd40/cue#install) · [как открыть](https://github.com/Tool-vd40/cue/blob/main/README.ru.md#установка)"
         env:
           GH_TOKEN: ${{ github.token }}

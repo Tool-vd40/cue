@@ -11,15 +11,41 @@ through that capture, so the panel doesn't show up in them.
 
 ## Install
 
-[Download Cue.dmg](https://github.com/Tool-vd40/cue/releases/latest/download/Cue.dmg), open it and drag Cue to Applications.
+1. [Download Cue.dmg](https://github.com/Tool-vd40/cue/releases/latest/download/Cue.dmg).
+2. Open it and drag **Cue** into **Applications**.
+3. Launch Cue from Applications.
 
-Cue is ad-hoc signed, not notarized, so macOS blocks the first launch.
-On macOS 15 and later: open Cue once, then System Settings → Privacy & Security →
-"Open Anyway". On macOS 13–14: right-click Cue → Open → Open. Or from Terminal:
+Cue lives in the menu bar (a lines-of-text icon at the top of the screen),
+there's no Dock icon. Requires macOS 13 or later.
+
+### "Apple could not verify Cue is free of malware"
+
+On first launch macOS shows this warning. It's expected: Cue is open source
+but not notarized by Apple (that requires a paid Apple Developer account).
+macOS shows this for every app downloaded from the internet without
+notarization. You only need to allow it once.
+
+**macOS 15 Sequoia and later**
+
+1. In the warning, click **Done** (not "Move to Trash").
+2. Open **System Settings → Privacy & Security** and scroll down.
+3. Next to "Cue was blocked to protect your Mac", click **Open Anyway**.
+4. Confirm with your password or Touch ID, then click **Open Anyway** again.
+
+**macOS 13 Ventura and 14 Sonoma**
+
+1. In Finder, open **Applications**.
+2. Right-click (or Control-click) **Cue** → **Open**.
+3. Click **Open** in the dialog.
+
+**Any version, via Terminal**
 
     xattr -dr com.apple.quarantine /Applications/Cue.app
 
-Cue lives in the menu bar, there's no Dock icon. Requires macOS 13 or later.
+This removes the "downloaded from the internet" flag, the one that triggers
+the warning.
+
+After that Cue opens normally, and in-app updates install without the warning.
 
 ## Updates
 
